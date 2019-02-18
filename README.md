@@ -3,7 +3,7 @@ The base repository for this project
 
 # PyCharm setup instructions
 1. Install PyCharm
-2. Open PyCharm and select "Checkout from version control > Git"
+2. Open PyCharm and select "VCS > Checkout from version control > Git"
 3. Put URL "https://github.com/ser517-team15/KneeTracker.git" > Clone
 4. Pycharm will open with KneeTracker project
 5. Goto "File > Settings" or press Ctrl+Alt+S
