@@ -62,3 +62,23 @@ while True:
 			("Success", "Yes" if success else "No"),
 			("FPS", "{:.2f}".format(framePerSecond.fps())),
 		]
+		
+		for (i, (k, v)) in enumerate(display_Screen):
+			text = "{}: {}".format(k, v)
+			cv2.putText(currentFrame, text, (10, H - ((i * 20) + 20)),
+						cv2.FONT_HERSHEY_SIMPLEX, 0.6, (0, 0, 255), 2)
+
+	cv2.imshow("Frame", currentFrame)
+	key = cv2.waitKey(1) & 0xFF
+
+
+	if key == ord("s"):
+		initialize = cv2.selectROI("Frame", currentFrame, fromCenter=False,
+								   showCrosshair=True)
+
+
+		realTimeTracker.init(currentFrame, initialize)
+		framePerSecond = FPS().start()
+
+	elif key == ord("q"):
+		break
