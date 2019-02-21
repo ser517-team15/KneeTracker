@@ -82,3 +82,11 @@ while True:
 
 	elif key == ord("q"):
 		break
+		
+if not arguements.get("video", False):
+	videoFrame.stop()
+
+else:
+	videoFrame.release()
+
+cv2.destroyAllWindows()
