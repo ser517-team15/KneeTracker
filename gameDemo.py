@@ -109,4 +109,12 @@ def show_hist(self):
                 self.show_backproj = not self.show_backproj
         cv2.destroyAllWindows()
 
-		
+if __name__ == '__main__':
+    import sys
+
+    try:
+        video_src = sys.argv[1]
+    except:
+        video_src = 0
+    print(__doc__)
+    App(video_src).run()		
