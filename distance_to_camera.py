@@ -25,3 +25,12 @@ image = cv2.imread("images/2ft.png")
 marker = find_marker(image)
 focalLength = (marker[1][0] * KNOWN_DISTANCE) / KNOWN_WIDTH	
 
+for imagePath in sorted(paths.list_images("images")):
+
+   image = cv2.imread(imagePath)
+   marker = find_marker(image)
+   inches = distanceCamera(KNOWN_WIDTH, focalLength, marker[1][0])
+
+   box = cv2.cv.BoxPoints(marker) if imutils.is_cv2() else cv2.boxPoints(marker)
+   box = np.int0(box)
+
