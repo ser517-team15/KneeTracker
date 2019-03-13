@@ -14,3 +14,14 @@ def find_marker(image):
 
 	return cv2.minAreaRect(c)
 
+def distanceCamera(knownWidth, focalLength, perWidth):
+   return (knownWidth * focalLength) / perWidth
+
+KNOWN_DISTANCE = 24.0
+
+KNOWN_WIDTH = 11.0
+
+image = cv2.imread("images/2ft.png")
+marker = find_marker(image)
+focalLength = (marker[1][0] * KNOWN_DISTANCE) / KNOWN_WIDTH	
+
